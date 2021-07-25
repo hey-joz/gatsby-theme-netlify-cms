@@ -1,0 +1,27 @@
+{
+  "name": "@hey_joz/gatsby-theme-netlify-cms",
+  "version": "0.0.1",
+  "author": "Josian Godard",
+  "license": "MIT",
+  "main": "gatsby-config.js",
+  "scripts": {
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "type-check": "tsc --noEmit",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@hey_joz/gatsby-source-netlify-cms": "0.0.3",
+    "netlify-cms-core": "2.45.0",
+    "slugify": "1.6.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "4.28.4",
+    "@typescript-eslint/parser": "4.28.4",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-simple-import-sort": "7.0.0",
+    "gatsby": "3.10.1",
+    "gatsby-source-filesystem": "3.10.0",
+    "typescript": "4.3.5"
+  }
+}
