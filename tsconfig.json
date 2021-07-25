@@ -24,5 +24,6 @@
     "outDir": "./",
     "declaration": true
   },
+  "files": ["./gatsby-node.ts"],
   "exclude": ["node_modules"]
 }

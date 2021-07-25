@@ -1,6 +1,6 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Josian Godard",
   "license": "MIT",
   "main": "index.ts",
@@ -8,7 +8,8 @@
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "type-check": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@hey_joz/gatsby-source-netlify-cms": "0.0.4",

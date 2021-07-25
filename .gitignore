@@ -1,2 +1,9 @@
 .DS_Store
 node_modules/
+
+gatsby-node.js
+gatsby-node.d.ts
+src/types.js
+src/types.d.ts
+src/helpers.js
+src/helpers.d.ts
