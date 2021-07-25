@@ -8,6 +8,7 @@
     "isolatedModules": false,
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
+    "jsx": "react",
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,

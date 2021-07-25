@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 
-const usePreview = <T>(): T => {
+const usePreview = <T>(): T | null => {
   const [data, setData] = useState<T | null>(null);
 
   const receiveMessage = useCallback((message: MessageEvent) => {
