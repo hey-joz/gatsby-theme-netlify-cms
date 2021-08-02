@@ -1570,11 +1570,12 @@
   dependencies:
     "@hapi/hoek" "^9.0.0"
 
-"@hey_joz/gatsby-source-netlify-cms@0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@hey_joz/gatsby-source-netlify-cms/-/gatsby-source-netlify-cms-0.0.6.tgz#9f75ad4377be9625b9b0097965cb2e9ff627621b"
-  integrity sha512-i9Nke0Ms43dKWtFEF7C2o3llKoqrqcizLwNTXSGvL6n0Paxpy6sB817qc0E074FsUtLepY2UjoTsqSXfG0Colw==
+"@hey_joz/gatsby-source-netlify-cms@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@hey_joz/gatsby-source-netlify-cms/-/gatsby-source-netlify-cms-0.0.7.tgz#e34d4bc5495dcbb6108cd997f76f9d02b7b82d37"
+  integrity sha512-91vInsyEu/eD9cQpvD/6EHcUbso3XevLJ6Z3fxKpby5ccPKZ4rjv8ycbQ23dLwaw1/PsKu5TF/6UxYdR5Rad3g==
   dependencies:
+    gatsby-source-filesystem "3.10.0"
     gray-matter "4.0.3"
     jsonpath-plus "6.0.1"
     remark "13.0.0"
