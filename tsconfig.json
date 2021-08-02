@@ -22,8 +22,8 @@
     "resolveJsonModule": true,
     "target": "es5",
     "outDir": "./",
-    "declaration": true
+    "declaration": true,
+    "noEmit": true
   },
-  "files": ["./gatsby-node.ts"],
   "exclude": ["node_modules"]
 }
