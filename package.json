@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@hey_joz/gatsby-source-netlify-cms": "0.0.7",
+    "@hey_joz/gatsby-source-netlify-cms": "0.0.8",
     "slugify": "^1.6.0",
     "uuid": "^8.3.2"
   },
