@@ -8,22 +8,19 @@ const Uuid: FC<CmsWidgetControlProps> = ({
   onChange,
   forID,
 }) => {
-  const uuid = v4();
-  const _value = value || uuid;
-
   useEffect(() => {
-    onChange(_value);
-  }, [onChange, _value]);
+    if (!value) {
+      const uuid = v4();
+      onChange(uuid);
+    }
+  }, []);
 
   return (
     <input
       className={classNameWrapper}
       type="text"
       id={forID}
-      value={_value}
-      onChange={(event) => {
-        onChange(event.target.value);
-      }}
+      value={value}
       disabled
       style={{
         backgroundColor: "#f5f5f5",
