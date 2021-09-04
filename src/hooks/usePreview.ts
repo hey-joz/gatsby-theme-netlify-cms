@@ -15,7 +15,7 @@ const usePreview = <T>(): T | null => {
       lifeCycle: "mounted",
     };
 
-    window.top.postMessage(lifeCyclePayload, "*");
+    window.top?.postMessage(lifeCyclePayload, "*");
 
     return () => {
       window.removeEventListener("message", receiveMessage);
