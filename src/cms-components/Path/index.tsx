@@ -60,16 +60,12 @@ const Path: FC<CmsWidgetControlProps> = ({
               }, 0);
             }}
             style={{
-              backgroundColor: "rgb(121, 130, 145)",
               border: "none",
-              borderRadius: "5px",
-              color: "rgb(255, 255, 255)",
               cursor: "pointer",
-              display: "block",
-              fontWeight: 500,
-              height: "26px",
-              lineHeight: "26px",
-              padding: "0px 10px",
+              padding: "2px 12px",
+              fontSize: "12px",
+              fontWeight: "bold",
+              borderRadius: "3px",
             }}
           >
             {"Auto"}
