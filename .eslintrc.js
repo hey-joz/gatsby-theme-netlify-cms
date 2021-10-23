@@ -2,6 +2,13 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: true,
   },
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
   overrides: [
     {
       files: ["**/*.ts", "**/*.tsx"],
