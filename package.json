@@ -1,6 +1,6 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": "Josian Godard",
   "license": "MIT",
   "main": "index.ts",
@@ -10,7 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@hey_joz/gatsby-source-netlify-cms": "0.0.15",
+    "@hey_joz/gatsby-source-netlify-cms": "0.0.16",
     "slugify": "1.6.1",
     "uuid": "8.3.2"
   },
