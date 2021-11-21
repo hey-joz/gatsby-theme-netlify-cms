@@ -1,6 +1,6 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "author": "Josian Godard",
   "license": "MIT",
   "main": "index.ts",
@@ -11,7 +11,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@hey_joz/gatsby-source-netlify-cms": "0.0.24",
+    "@hey_joz/gatsby-source-netlify-cms": "0.0.25",
     "luxon": "2.1.1",
     "netlify-cms-app": "2.15.59",
     "netlify-identity-widget": "1.9.2",
