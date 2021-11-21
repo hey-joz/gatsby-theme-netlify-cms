@@ -1,4 +1,4 @@
-import { CmsWidgetControlProps } from "netlify-cms-core";
+import type { CmsWidgetControlProps } from "@hey_joz/gatsby-source-netlify-cms/types";
 import React, { FC, memo, useEffect, useRef } from "react";
 import slugify from "slugify";
 
