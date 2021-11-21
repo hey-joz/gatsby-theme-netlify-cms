@@ -27,25 +27,25 @@ const CMS: FC<Props> = ({ children, collectionPreviewPromises }) => {
     }
   `);
 
-  const promises: [
-    Promise<typeof import("netlify-cms-app")>,
-    Promise<typeof import("netlify-identity-widget")>,
-    ...Promise<unknown>[]
-  ] = [
-    import("netlify-cms-app"),
-    import("netlify-identity-widget"),
-    import("../cms-components/Deploys"),
-    import("../cms-components/Path"),
-    import("../cms-components/Uuid"),
-  ];
-
-  if (collectionPreviewPromises) {
-    Object.keys(collectionPreviewPromises).forEach((collection) => {
-      promises.push(collectionPreviewPromises[collection]);
-    });
-  }
-
   useEffect(() => {
+    const promises: [
+      Promise<typeof import("netlify-cms-app")>,
+      Promise<typeof import("netlify-identity-widget")>,
+      ...Promise<unknown>[]
+    ] = [
+      import("netlify-cms-app"),
+      import("netlify-identity-widget"),
+      import("../cms-components/Deploys"),
+      import("../cms-components/Path"),
+      import("../cms-components/Uuid"),
+    ];
+
+    if (collectionPreviewPromises) {
+      Object.keys(collectionPreviewPromises).forEach((collection) => {
+        promises.push(collectionPreviewPromises[collection]);
+      });
+    }
+
     Promise.all<
       typeof import("netlify-cms-app"),
       typeof import("netlify-identity-widget"),
