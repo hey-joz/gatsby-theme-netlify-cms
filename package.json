@@ -1,6 +1,6 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "author": "Josian Godard",
   "license": "MIT",
   "main": "index.ts",
@@ -12,18 +12,15 @@
   },
   "dependencies": {
     "@hey_joz/gatsby-source-netlify-cms": "0.0.25",
-    "luxon": "2.1.1",
     "netlify-cms-app": "2.15.59",
     "netlify-identity-widget": "1.9.2",
     "slugify": "1.6.2",
-    "theme-ui": "0.12.0",
     "uuid": "8.3.2"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "2.3.0",
     "@graphql-codegen/typescript": "2.4.1",
     "@graphql-codegen/typescript-operations": "2.2.1",
-    "@types/luxon": "2.0.7",
     "@types/netlify-identity-widget": "1.9.2",
     "@types/uuid": "8.3.3",
     "@typescript-eslint/eslint-plugin": "5.4.0",
