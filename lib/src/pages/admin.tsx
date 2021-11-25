@@ -2,7 +2,22 @@ import { graphql, useStaticQuery } from "gatsby";
 import type NetlifyIdentityWidget from "netlify-identity-widget";
 import React, { FC, Fragment, memo, ReactNode, useEffect } from "react";
 
-import { CmsQuery } from "../../__generated__/gatsby.types";
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K];
+};
+
+export type CmsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type CmsQuery = {
+  readonly __typename?: "Query";
+  readonly sitePlugin?:
+    | {
+        readonly __typename?: "SitePlugin";
+        readonly pluginOptions?: any | null | undefined;
+      }
+    | null
+    | undefined;
+};
 
 declare global {
   // eslint-disable-next-line no-unused-vars
@@ -37,6 +52,8 @@ const CMS: FC<Props> = ({
     const promises: [
       Promise<typeof import("netlify-cms-app")>,
       Promise<typeof import("netlify-identity-widget")>,
+      Promise<typeof import("../cms/components/Path")>,
+      Promise<typeof import("../cms/components/Uuid")>,
       ...Promise<unknown>[]
     ] = [
       import("netlify-cms-app"),
@@ -57,14 +74,7 @@ const CMS: FC<Props> = ({
       });
     }
 
-    Promise.all<
-      typeof import("netlify-cms-app"),
-      typeof import("netlify-identity-widget"),
-      typeof import("../cms/components/Path"),
-      typeof import("../cms/components/Uuid")
-      // TODO: fix this type
-      // @ts-expect-error this array is not compatible with the forced types
-    >(promises).then(
+    Promise.all(promises).then(
       ([CMS, netlifyIdentityWidget, Path, Uuid, ...otherImports]) => {
         // Isolate preview imports
         const previewImports = previewTemplatePromises

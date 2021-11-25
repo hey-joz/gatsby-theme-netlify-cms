@@ -5,7 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "esModuleInterop": true,
-    "isolatedModules": false,
+    "isolatedModules": true,
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "jsx": "react",
@@ -22,8 +22,8 @@
     "resolveJsonModule": true,
     "target": "es5",
     "outDir": "./",
-    "declaration": true,
-    "noEmit": true
+    "declaration": true
   },
+  "include": ["lib"],
   "exclude": ["node_modules"]
 }

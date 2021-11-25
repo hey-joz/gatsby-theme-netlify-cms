@@ -2,3 +2,9 @@
 node_modules/
 .connect-deps-cache
 .connect-deps.json
+
+src/*
+index.js
+index.d.ts
+
+!lib/*

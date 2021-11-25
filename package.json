@@ -1,14 +1,15 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "author": "Josian Godard",
   "license": "MIT",
-  "main": "index.ts",
+  "main": "index.js",
   "scripts": {
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "graphql-codegen": "graphql-codegen --config graphql-codegen.js",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "build": "tsc",
+    "prepare": "yarn build"
   },
   "dependencies": {
     "@hey_joz/gatsby-source-netlify-cms": "0.0.25",
@@ -18,9 +19,6 @@
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "2.3.0",
-    "@graphql-codegen/typescript": "2.4.1",
-    "@graphql-codegen/typescript-operations": "2.2.1",
     "@types/netlify-identity-widget": "1.9.2",
     "@types/uuid": "8.3.3",
     "@typescript-eslint/eslint-plugin": "5.4.0",
