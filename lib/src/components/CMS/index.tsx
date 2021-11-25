@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby";
+import type { InitOptions } from "@hey_joz/gatsby-source-netlify-cms/types";
 import type NetlifyIdentityWidget from "netlify-identity-widget";
 import React, { FC, Fragment, memo, ReactNode, useEffect } from "react";
 
@@ -33,33 +33,27 @@ type Props = {
   children: ReactNode;
   previewTemplatePromises?: PreviewTemplatePromises;
   widgetPromises?: WidgetPromises;
+  initOptions: InitOptions;
 };
 
 const CMS: FC<Props> = ({
   children,
   previewTemplatePromises,
   widgetPromises,
+  initOptions,
 }) => {
-  const data = useStaticQuery<CmsQuery>(graphql`
-    query CMS {
-      sitePlugin(name: { eq: "@hey_joz/gatsby-theme-netlify-cms" }) {
-        pluginOptions
-      }
-    }
-  `);
-
   useEffect(() => {
     const promises: [
       Promise<typeof import("netlify-cms-app")>,
       Promise<typeof import("netlify-identity-widget")>,
-      Promise<typeof import("../cms/components/Path")>,
-      Promise<typeof import("../cms/components/Uuid")>,
+      Promise<typeof import("../../cms/components/Path")>,
+      Promise<typeof import("../../cms/components/Uuid")>,
       ...Promise<unknown>[]
     ] = [
       import("netlify-cms-app"),
       import("netlify-identity-widget"),
-      import("../cms/components/Path"),
-      import("../cms/components/Uuid"),
+      import("../../cms/components/Path"),
+      import("../../cms/components/Uuid"),
     ];
 
     if (previewTemplatePromises) {
@@ -126,7 +120,7 @@ const CMS: FC<Props> = ({
           });
         }
 
-        CMS.default.init(data.sitePlugin?.pluginOptions.initOptions);
+        CMS.default.init(initOptions);
 
         netlifyIdentityWidget.init();
       }
