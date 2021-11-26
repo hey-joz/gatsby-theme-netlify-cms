@@ -1,4 +1,4 @@
-import type { InitOptions } from "@hey_joz/gatsby-source-netlify-cms/types";
+import type { InitOptions } from "@hey_joz/gatsby-source-netlify-cms";
 import type NetlifyIdentityWidget from "netlify-identity-widget";
 import React, { FC, Fragment, memo, ReactNode, useEffect } from "react";
 

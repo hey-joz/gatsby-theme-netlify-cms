@@ -1,6 +1,6 @@
-import { CmsField } from "../..";
+import type { CmsCollectionField } from "@hey_joz/gatsby-source-netlify-cms";
 
-export const idField: CmsField = {
+export const idField: CmsCollectionField = {
   name: "id",
   widget: "uuid",
   label: "ID",
@@ -9,7 +9,7 @@ export const idField: CmsField = {
   meta: false,
 };
 
-export const pathField: CmsField = {
+export const pathField: CmsCollectionField = {
   name: "path",
   widget: "path",
   label: "Chemin",
