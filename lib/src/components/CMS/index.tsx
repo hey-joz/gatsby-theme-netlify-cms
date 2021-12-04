@@ -2,6 +2,18 @@ import type { InitOptions } from "@hey_joz/gatsby-source-netlify-cms";
 import type NetlifyIdentityWidget from "netlify-identity-widget";
 import React, { FC, Fragment, memo, ReactNode, useEffect } from "react";
 
+const slice = (
+  // eslint-disable-next-line no-unused-vars
+  imports: any[],
+  // eslint-disable-next-line no-unused-vars
+  lengths: number[]
+): any[][] => {
+  const _imports = [...imports];
+  return lengths.map((length) => {
+    return _imports.splice(0, length);
+  });
+};
+
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K];
 };
@@ -28,11 +40,13 @@ declare global {
 
 export type PreviewTemplatePromises = Record<string, Promise<unknown>>;
 export type WidgetPromises = Record<string, Promise<unknown>>;
+export type EditorComponentPromises = Record<string, Promise<unknown>>;
 
 type Props = {
   children: ReactNode;
   previewTemplatePromises?: PreviewTemplatePromises;
   widgetPromises?: WidgetPromises;
+  editorComponentPromises?: EditorComponentPromises;
   initOptions: InitOptions;
 };
 
@@ -40,6 +54,7 @@ const CMS: FC<Props> = ({
   children,
   previewTemplatePromises,
   widgetPromises,
+  editorComponentPromises,
   initOptions,
 }) => {
   useEffect(() => {
@@ -68,15 +83,26 @@ const CMS: FC<Props> = ({
       });
     }
 
+    if (editorComponentPromises) {
+      Object.keys(editorComponentPromises).forEach((widget) => {
+        promises.push(editorComponentPromises[widget]);
+      });
+    }
+
     Promise.all(promises).then(
       ([CMS, netlifyIdentityWidget, Path, Uuid, ...otherImports]) => {
-        // Isolate preview imports
-        const previewImports = previewTemplatePromises
-          ? otherImports.slice(0, Object.keys(previewTemplatePromises).length)
-          : [];
-
-        // Widgets are the remaining imports
-        const widgetImports = otherImports.slice(previewImports.length);
+        const [previewImports, widgetImports, editorComponentsImports] = slice(
+          otherImports,
+          [
+            previewTemplatePromises
+              ? Object.keys(previewTemplatePromises).length
+              : 0,
+            widgetPromises ? Object.keys(widgetPromises).length : 0,
+            editorComponentPromises
+              ? Object.keys(editorComponentPromises).length
+              : 0,
+          ]
+        );
 
         global.window.netlifyIdentity = netlifyIdentityWidget;
 
@@ -103,7 +129,6 @@ const CMS: FC<Props> = ({
             CMS.default.registerPreviewTemplate(
               collection,
               // TODO: fix this type
-              // @ts-expect-error this is not typed
               previewImports[index].default
             );
           });
@@ -114,8 +139,15 @@ const CMS: FC<Props> = ({
             CMS.default.registerWidget(
               widget,
               // TODO: fix this type
-              // @ts-expect-error this is not typed
               widgetImports[index].default
+            );
+          });
+        }
+
+        if (editorComponentPromises) {
+          Object.keys(editorComponentPromises).forEach((_, index) => {
+            CMS.default.registerEditorComponent(
+              editorComponentsImports[index].default
             );
           });
         }
