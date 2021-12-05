@@ -1,6 +1,8 @@
 import type { InitOptions } from "@hey_joz/gatsby-source-netlify-cms";
 import type NetlifyIdentityWidget from "netlify-identity-widget";
-import React, { FC, Fragment, memo, ReactNode, useEffect } from "react";
+import React, { FC, memo, ReactNode, useEffect } from "react";
+
+import Component from "./Component";
 
 const slice = (
   // eslint-disable-next-line no-unused-vars
@@ -159,7 +161,7 @@ const CMS: FC<Props> = ({
     );
   }, []);
 
-  return <Fragment>{children}</Fragment>;
+  return <Component>{children}</Component>;
 };
 
 export default memo(CMS);
