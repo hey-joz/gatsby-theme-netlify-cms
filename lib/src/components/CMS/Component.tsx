@@ -18,6 +18,17 @@ const CMSComponent: FC<{ children: ReactNode }> = ({ children }) => {
             width: "auto !important",
             minWidth: "200px !important",
           },
+          'button[class*="FileWidgetButton"]': {
+            marginTop: "1em",
+            marginBottom: 0,
+            "&:first-of-type": {
+              marginTop: 0,
+            },
+          },
+          'button[class*="FileWidgetButton-button"] + button[class*="FileWidgetButton-button"]':
+            {
+              display: "none",
+            },
         }}
       />
       <Helmet defer={false}>

@@ -1,6 +1,6 @@
 {
   "name": "@hey_joz/gatsby-theme-netlify-cms",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "author": "Josian Godard",
   "license": "MIT",
   "main": "index.js",
@@ -12,24 +12,24 @@
     "prepare": "yarn build"
   },
   "dependencies": {
-    "netlify-cms-app": "2.15.60",
+    "netlify-cms-app": "2.15.63",
     "netlify-identity-widget": "1.9.2",
-    "slugify": "1.6.3",
+    "slugify": "1.6.5",
     "uuid": "8.3.2"
   },
   "devDependencies": {
-    "@emotion/react": "11.7.0",
-    "@hey_joz/gatsby-source-netlify-cms": "0.0.31",
+    "@emotion/react": "11.7.1",
+    "@hey_joz/gatsby-source-netlify-cms": "0.0.32",
     "@types/netlify-identity-widget": "1.9.2",
-    "@types/react-helmet": "6.1.4",
-    "@types/uuid": "8.3.3",
-    "@typescript-eslint/eslint-plugin": "5.5.0",
-    "@typescript-eslint/parser": "5.5.0",
+    "@types/react-helmet": "6.1.5",
+    "@types/uuid": "8.3.4",
+    "@typescript-eslint/eslint-plugin": "5.9.1",
+    "@typescript-eslint/parser": "5.9.1",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "gatsby": "4.3.0",
+    "gatsby": "4.5.2",
     "react-helmet": "6.1.0",
-    "typescript": "4.5.2"
+    "typescript": "4.5.4"
   },
   "peerDependencies": {
     "@emotion/react": "^11.7.0",
