@@ -124,7 +124,7 @@ const PreviewWrapper: FC<Props> = ({ data }) => {
         style={{
           position: "fixed",
           top: "62px",
-          right: 0,
+          right: "10px",
           zIndex: 299,
         }}
         role="button"
