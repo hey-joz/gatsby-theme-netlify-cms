@@ -6,5 +6,12 @@ node_modules/
 src/*
 index.js
 index.d.ts
+gatsby-browser.js
+gatsby-browser.d.ts
+gatsby-node.js
+gatsby-node.d.ts
+gatsby-ssr.js
+gatsby-ssr.d.ts
 
 !lib/*
+hey_joz-gatsby-theme-netlify-cms-v*
